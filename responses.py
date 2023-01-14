@@ -20,7 +20,7 @@ def load_text(file):
 
 # Store JSON data
 response_data = load_json("responses.json")
-
+# '` '
 
 def handle_response(message) -> str:
     p_message = message.lower()
