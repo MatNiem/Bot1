@@ -3,7 +3,7 @@ import json
 import re
 import random_responses
 from epicstore_api import EpicGamesStoreAPI
-
+import jp2
 
 # Load JSON data
 def load_json(file):
@@ -43,6 +43,8 @@ def handle_response(message) -> str:
         # json_regex = re.compile(r'\"title\": \"([\w ]+)\"')
         # r = json_regex.findall(d)
         return ', '.join(r)
+    if message == 'jp2':
+        return jp2.jp2_quote(random.randint(0, 150))
     return get_response(p_message)
 
 
