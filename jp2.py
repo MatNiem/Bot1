@@ -10,5 +10,5 @@ def jp2_quote(nr):
 
     jp2_regex = re.compile(r"\* (?!Autor)(?!Opis)(?!Źródło)(?!Zobacz też)(?!\[\[)(.*)")
 
-    lista = jp2_regex.findall(str(soup).replace("&lt;br&gt;", '\r\n'))
-    return lista[nr] + " - Jan Paweł II"
+    lista = jp2_regex.findall(str(soup))
+    return lista[nr].replace("&lt;br /&gt;", '\n').replace("&lt;br&gt;", '\n') + " - Jan Paweł II"
